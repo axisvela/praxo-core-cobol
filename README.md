@@ -5,18 +5,17 @@ embeddable, MIT-licensed agent execution kernel with policy controls,
 human-in-the-loop approval, checkpoints, events, and tool calling.
 
 - Package: `praxo-core-cobol` (`0.4.0`)
-- Registry: source build; no mainstream registry
+- Registry: Source
+- Install: `Source build (see README)`
 - Documentation: https://axisvela.github.io/praxo-core/languages/cobol/
+- Mirror repository: https://github.com/axisvela/praxo-core-cobol
 - Canonical source: https://github.com/axisvela/praxo-core/tree/main/language/cobol
 - Release index: https://axisvela.github.io/praxo-core/languages/registry-status/
 
-This repository is a discovery mirror of the canonical COBOL source. The
-monorepo remains the source of truth and the release workflow source. Shared
-conformance vectors are included under `spec/`.
-
-## Install or build
-
-Source build from `language/cobol`.
+This repository is a discovery mirror of the canonical COBOL source.
+The monorepo remains the source of truth and the release workflow source. Shared
+conformance vectors are included under `spec/`, so the implementation can be
+built and tested here.
 
 ## Verify
 
