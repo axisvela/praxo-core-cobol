@@ -53,11 +53,13 @@ Runnable examples live under [`language/cobol/examples`](language/cobol/examples
 | --- | --- |
 | [checkpoint](language/cobol/examples/checkpoint) | This example uses the COBOL Core checkpoint allowlist to encode and decode only registered payload types. |
 | [event-sink](language/cobol/examples/event-sink) | This example uses the COBOL Core event contract to multicast lifecycle and tool events and filter the tool-only stream. |
+| [hitl](language/cobol/examples/hitl) | This example demonstrates a write tool that requires human approval: |
 | [identity-policy](language/cobol/examples/identity-policy) | This example uses the COBOL Core path policy to allow an in-root action and reject traversal outside the granted root. |
 | [mcp](language/cobol/examples/mcp) | This example uses a caller-owned in-process transport with the COBOL MCP client. It covers initialize, `tools/list`, and `tools/call` without a server process. |
 | [provider-fallback](language/cobol/examples/provider-fallback) | This example calls a fallback only after the primary fails and preserves the primary failure when both fail. |
 | [retry](language/cobol/examples/retry) | This example retries a transient failure with a bounded attempt count and keeps the exhausted failure state. |
 | [service](language/cobol/examples/service) | This example defines a transport-neutral request handler boundary with health, principal, and run cases. Wire it into any COBOL HTTP server. |
+| [session-checkpoint](language/cobol/examples/session-checkpoint) | This example saves and restores a conversation history across two agent turns. It uses the Core allowlist for payload encoding and a teaching in-memory payload. |
 | [streaming](language/cobol/examples/streaming) | This example accumulates stream chunks and checks that they reconstruct the final output. |
 | [structured-output](language/cobol/examples/structured-output) | This example validates a final JSON answer against a schema and rejects invalid output. |
 
