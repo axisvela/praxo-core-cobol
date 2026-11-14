@@ -8,6 +8,7 @@ human-in-the-loop approval, checkpoints, events, and tool calling.
 - Registry: Source
 - Install: `Source build (see README)`
 - Documentation: https://axisvela.github.io/praxo-core/languages/cobol/
+- Examples: https://github.com/axisvela/praxo-core-cobol/tree/main/language/cobol/examples
 - Mirror repository: https://github.com/axisvela/praxo-core-cobol
 - Canonical source: https://github.com/axisvela/praxo-core/tree/main/language/cobol
 - Release index: https://axisvela.github.io/praxo-core/languages/registry-status/
