@@ -9,9 +9,9 @@ PRAXO-CORE is an embeddable, MIT-licensed agent framework. This package is its n
 | Package | `praxo-core-cobol` |
 | Registry | Source |
 | Build | Source build (see README) |
-| Source version | `0.7.0` |
+| Source version | `0.8.0` |
 | Published version | not published |
-| Source tag | `cobol/v0.7.0` |
+| Source tag | `cobol/v0.8.0` |
 | Tier | Core |
 | Contract | `SPEC_VERSION` `0.2.0` |
 | Documentation | https://axisvela.github.io/praxo-core/languages/cobol/ |
@@ -36,7 +36,7 @@ This implementation is source-only. Follow the build instructions in [`language/
 
 | Capability | Status | Detail |
 | --- | --- | --- |
-| OpenAI-compatible model | native (transport seam) | `praxo-openai`; caller supplies a transport program and optional delta program; SSE streaming reassembles content, tool calls, usage, and finish reason; the model callback lacks tool specs/history |
+| OpenAI-compatible model | native (transport seam) | `praxo-openai`; caller supplies a transport program and an optional delta program; SSE streaming reassembles content, tool calls, usage, and finish reason; the model callback lacks tool specs/history |
 | Anthropic model | native (transport seam) | `praxo-anthropic`; caller supplies a transport program; maps system messages, tools, tool choice, text, tool use, and usage |
 | Gemini model | native (transport seam) | `praxo-gemini`; caller supplies a transport program; maps system instructions, tools, tool choice, text, function calls, usage, and Gemini SSE streaming |
 | MCP client | native (transport seam) | `praxo-mcp`; caller supplies a transport program |
