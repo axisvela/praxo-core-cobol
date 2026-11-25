@@ -12,6 +12,9 @@ PRAXO-CORE is an embeddable, MIT-licensed agent framework. This package is its n
 | Source version | `0.8.0` |
 | Published version | not published |
 | Source tag | `cobol/v0.8.0` |
+| Tutorial tag | `cobol/tutorial/v0.1.0` |
+| Application tag | `cobol/application/v0.1.0` |
+| Examples tag | `cobol/examples/v0.1.0` |
 | Tier | Core |
 | Contract | `SPEC_VERSION` `0.2.0` |
 | Documentation | https://axisvela.github.io/praxo-core/languages/cobol/ |
@@ -65,6 +68,26 @@ Runnable examples live under [`language/cobol/examples`](language/cobol/examples
 | [session-checkpoint](language/cobol/examples/session-checkpoint) | This example saves and restores a conversation history across two agent turns. It uses the Core allowlist for payload encoding and a teaching in-memory payload. |
 | [streaming](language/cobol/examples/streaming) | This example accumulates stream chunks and checks that they reconstruct the final output. |
 | [structured-output](language/cobol/examples/structured-output) | This example validates a final JSON answer against a schema and rejects invalid output. |
+
+## Scenario Tutorials
+
+Scenario-oriented tutorials live under `language/cobol/Tutorial`.
+
+| Path | What it shows |
+| --- | --- |
+| [Tutorial](language/cobol/Tutorial) | Application tutorials live in `Tutorial/`, alongside focused `language/go/examples/`. |
+| [batch-exception-review](language/cobol/Tutorial/batch-exception-review) | This tutorial reuses the existing [`language/cobol/examples/batch-exception-review`](https://github.com/axisvela/praxo-core/tree/main/language/cobol/examples/batch-exception-rev... |
+| [budget-review](language/cobol/Tutorial/budget-review) | Flags fixed budget variances and milestone mismatches. No audit conclusion or official determination. |
+| [legacy-migration](language/cobol/Tutorial/legacy-migration) | Inventories three fixed modules and reports activation and batch counts. No code conversion or production migration. |
+| [medical-coding](language/cobol/Tutorial/medical-coding) | Checks three fixed records for completeness and drafts review-only codes. No reimbursement optimization, billing submission or clinical decision. |
+
+## Reference Applications
+
+Complete AI-native reference applications live under `language/cobol/application`.
+
+| Path | What it shows |
+| --- | --- |
+| [application](language/cobol/application) | A native GnuCOBOL batch reviewer where the agent drives the primary exception workflow: the driver reads a bounded exception file, the agent inspects each allowed record, writes... |
 
 ## Verify
 
