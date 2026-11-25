@@ -12,9 +12,6 @@ PRAXO-CORE is an embeddable, MIT-licensed agent framework. This package is its n
 | Source version | `0.8.0` |
 | Published version | not published |
 | Source tag | `cobol/v0.8.0` |
-| Tutorial tag | `cobol/tutorial/v0.1.0` |
-| Application tag | `cobol/application/v0.1.0` |
-| Examples tag | `cobol/examples/v0.1.0` |
 | Tier | Core |
 | Contract | `SPEC_VERSION` `0.2.0` |
 | Documentation | https://axisvela.github.io/praxo-core/languages/cobol/ |
