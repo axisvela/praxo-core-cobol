@@ -11,7 +11,8 @@ PRAXO-CORE is an embeddable, MIT-licensed agent framework. This package is its n
 | Build | Source build (see README) |
 | Source version | `0.9.0` |
 | Published version | not published |
-| Source tag | `cobol/v0.9.0` |
+| Publication status | source-only |
+| Canonical source tag | [`cobol/v0.9.0`](https://github.com/axisvela/praxo-core/tree/cobol/v0.9.0) |
 | Tier | Core |
 | Contract | `SPEC_VERSION` `0.2.0` |
 | Documentation | https://axisvela.github.io/praxo-core/languages/cobol/ |
@@ -30,7 +31,7 @@ PRAXO-CORE is an embeddable, MIT-licensed agent framework. This package is its n
 
 ## Quick start
 
-This implementation is source-only. Follow the build instructions in [`language/cobol/README.md`](language/cobol/README.md).
+No published package is available. Follow the source build instructions in [`language/cobol/README.md`](language/cobol/README.md).
 
 ## What's included
 
@@ -51,13 +52,13 @@ Runnable examples live under [`language/cobol/examples`](language/cobol/examples
 
 | Example | What it shows |
 | --- | --- |
-| [batch-exception-review](language/cobol/examples/batch-exception-review) | Keep the main batch deterministic and hand exceptions to a separate review step. This fixture uses Python to stand in for the batch and scheduler, and reuses the native COBOL [a... |
+| [batch-exception-review](language/cobol/examples/batch-exception-review) | Keep the main batch deterministic and hand exceptions to a separate review step. This fixture uses Python to stand in for the batch and scheduler, and reuses the native COBOL [allow/deny consumer](https://github.com/axisvela/praxo-core/blob/main/language/cobol/examples/consumer/) as the review worker. It does not need a model service, credentials, or an HTTP transport. |
 | [checkpoint](language/cobol/examples/checkpoint) | This example uses the COBOL Core checkpoint allowlist to encode and decode only registered payload types. |
 | [consumer](language/cobol/examples/consumer) | This example runs a deterministic model against the COBOL Core, registers one `record(target)` tool, applies an explicit tool scope plus policy, and checks that an allowed call... |
 | [event-sink](language/cobol/examples/event-sink) | This example uses the COBOL Core event contract to multicast lifecycle and tool events and filter the tool-only stream. |
 | [hitl](language/cobol/examples/hitl) | This example demonstrates a write tool that requires human approval: |
 | [identity-policy](language/cobol/examples/identity-policy) | This example uses the COBOL Core path policy to allow an in-root action and reject traversal outside the granted root. |
-| [live-model](language/cobol/examples/live-model) | This scaffold wires `praxo-openai` and a `get_time(zone)` tool, but **does not connect to a model out of the box**. The shipped `live-transport` stub returns `PROVIDER_HTTP` wit... |
+| [live-model](language/cobol/examples/live-model) | This scaffold wires `praxo-openai` and a `get_time(zone)` tool, but **does not connect to a model out of the box**. The shipped `live-transport` stub returns `PROVIDER_HTTP` without making a request. Setting an endpoint, model, and key does not replace the stub. For a runnable, offline allow/deny check, start with the [deterministic consumer](https://github.com/axisvela/praxo-core/blob/main/language/cobol/examples/consumer/). |
 | [mcp](language/cobol/examples/mcp) | This example uses a caller-owned in-process transport with the COBOL MCP client. It covers initialize, `tools/list`, and `tools/call` without a server process. |
 | [provider-fallback](language/cobol/examples/provider-fallback) | This example calls a fallback only after the primary fails and preserves the primary failure when both fail. |
 | [retry](language/cobol/examples/retry) | This example retries a transient failure with a bounded attempt count and keeps the exhausted failure state. |
@@ -73,14 +74,14 @@ Scenario-oriented tutorials live under `language/cobol/Tutorial`. Planning conte
 | Path | What it shows |
 | --- | --- |
 | [Tutorial](language/cobol/Tutorial) | Application tutorials live in `Tutorial/`, alongside focused `language/go/examples/`. |
-| [batch-exception-review](language/cobol/Tutorial/batch-exception-review) | This tutorial reuses the existing [`language/cobol/examples/batch-exception-review`](https://github.com/axisvela/praxo-core/tree/main/language/cobol/examples/batch-exception-rev... |
+| [batch-exception-review](language/cobol/Tutorial/batch-exception-review) | This tutorial reuses the existing [`language/cobol/examples/batch-exception-review`](https://github.com/axisvela/praxo-core/tree/main/language/cobol/examples/batch-exception-review) fixture. It does not create a second bank model or a second COBOL review worker. |
 | [budget-review](language/cobol/Tutorial/budget-review) | Flags fixed budget variances and milestone mismatches. No audit conclusion or official determination. |
 | [legacy-migration](language/cobol/Tutorial/legacy-migration) | Inventories three fixed modules and reports activation and batch counts. No code conversion or production migration. |
 | [medical-coding](language/cobol/Tutorial/medical-coding) | Checks three fixed records for completeness and drafts review-only codes. No reimbursement optimization, billing submission or clinical decision. |
 
 ## Reference Applications
 
-Complete AI-native reference applications live under `language/cobol/application`.
+Reference application sources live under `language/cobol/application`. See each README for implementation scope and validation status.
 
 | Path | What it shows |
 | --- | --- |
@@ -123,7 +124,7 @@ This mirror contains the language source and the shared `spec/` vectors, so the 
 - Mirror repository: https://github.com/axisvela/praxo-core-cobol
 - Release index: https://axisvela.github.io/praxo-core/languages/registry-status/
 
-This repository is a discovery mirror of the canonical COBOL source. The monorepo remains the source of truth and the release workflow source.
+This repository is a discovery mirror of the canonical COBOL source. The monorepo remains the source of truth and the release workflow source. The mirror's `main` branch tracks current source, not a release snapshot. Source tags refer to the canonical monorepo and are not necessarily present in this mirror; syncing the branch does not publish mirror tags or registry packages.
 
 PRAXO-CORE is not a hosted model, workflow engine, identity provider, or safety controller. Do not infer exactly-once execution, complete sandbox isolation, production security certification, live-provider behavior, or physical safety from this package.
 
