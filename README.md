@@ -1,6 +1,6 @@
 # PRAXO-CORE for COBOL
 
-PRAXO-CORE is an embeddable, MIT-licensed agent framework. This package is its native GnuCOBOL Core: an in-process agent loop with tools, policy, middleware, events, checkpoints, and human-in-the-loop decisions, implemented in COBOL rather than bridged to another Core.
+PRAXO-CORE (also written praxocore) is an embeddable, MIT-licensed agent framework. PRAXO-CORE is an embeddable, MIT-licensed agent framework. This package is its native GnuCOBOL Core: an in-process agent loop with tools, policy, middleware, events, checkpoints, and human-in-the-loop decisions, implemented in COBOL rather than bridged to another Core.
 
 ## At a glance
 
@@ -54,7 +54,7 @@ Runnable examples live under [`language/cobol/examples`](language/cobol/examples
 | --- | --- |
 | [batch-exception-review](language/cobol/examples/batch-exception-review) | Keep the main batch deterministic and hand exceptions to a separate review step. This fixture uses Python to stand in for the batch and scheduler, and reuses the native COBOL [allow/deny consumer](https://github.com/axisvela/praxo-core/blob/main/language/cobol/examples/consumer/) as the review worker. It does not need a model service, credentials, or an HTTP transport. |
 | [checkpoint](language/cobol/examples/checkpoint) | This example uses the COBOL Core checkpoint allowlist to encode and decode only registered payload types. |
-| [consumer](language/cobol/examples/consumer) | This example runs a deterministic model against the COBOL Core, registers one `record(target)` tool, applies an explicit tool scope plus policy, and checks that an allowed call... |
+| [consumer](language/cobol/examples/consumer) | This example runs a deterministic model against the COBOL Core, registers one `record(target)` tool, applies an explicit tool scope plus policy, and checks that an allowed call produces one effect while a denied call produces none. |
 | [event-sink](language/cobol/examples/event-sink) | This example uses the COBOL Core event contract to multicast lifecycle and tool events and filter the tool-only stream. |
 | [hitl](language/cobol/examples/hitl) | This example demonstrates a write tool that requires human approval: |
 | [identity-policy](language/cobol/examples/identity-policy) | This example uses the COBOL Core path policy to allow an in-root action and reject traversal outside the granted root. |
@@ -85,7 +85,7 @@ Reference application sources live under `language/cobol/application`. See each 
 
 | Path | What it shows |
 | --- | --- |
-| [application](language/cobol/application) | A native GnuCOBOL batch reviewer where the agent drives the primary exception workflow: the driver reads a bounded exception file, the agent inspects each allowed record, writes... |
+| [application](language/cobol/application) | A native GnuCOBOL batch reviewer where the agent drives the primary exception workflow: the driver reads a bounded exception file, the agent inspects each allowed record, writes a diagnosis and rationale, and drafts a review-only advisory. The batch never posts an adjustment and private records are denied before the read. |
 
 ## Verify
 
@@ -96,6 +96,11 @@ python language/cobol/run-tests.py
 ```
 
 This mirror contains the language source and the shared `spec/` vectors, so the implementation can be built and tested here. See [`language/cobol/README.md`](language/cobol/README.md) for the exact commands. The monorepo CI runs conformance, API snapshot, and native tests for this implementation.
+
+## Boundaries
+
+Reference application source is not end-to-end portfolio acceptance; follow each README's scope and evidence.
+PRAXO-CORE is not a hosted model, workflow engine, identity provider, or safety controller. Do not infer exactly-once execution, complete sandbox isolation, production security certification, live-provider behavior, or physical safety from this package.
 
 ## Community
 
@@ -126,6 +131,5 @@ This mirror contains the language source and the shared `spec/` vectors, so the 
 
 This repository is a discovery mirror of the canonical COBOL source. The monorepo remains the source of truth and the release workflow source. The mirror's `main` branch tracks current source, not a release snapshot. Source tags refer to the canonical monorepo and are not necessarily present in this mirror; syncing the branch does not publish mirror tags or registry packages.
 
-PRAXO-CORE is not a hosted model, workflow engine, identity provider, or safety controller. Do not infer exactly-once execution, complete sandbox isolation, production security certification, live-provider behavior, or physical safety from this package.
 
 MIT licensed.
